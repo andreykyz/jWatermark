@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 
 public class ImageWatermarkGuiSwing extends JFrame {
 
@@ -32,8 +33,12 @@ public class ImageWatermarkGuiSwing extends JFrame {
 	menuBar.add(mFile);
 	menuBar.add(mHelp);
 	
-	setJMenuBar(menuBar);
-	pack();
+	JPanel panel = new javax.swing.JPanel();
+	
+    setJMenuBar(menuBar);
+	setContentPane(panel);
+	setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+	pack(); //Adjusting size
 	
 	}
 
