@@ -1,3 +1,30 @@
+/*
+Copyright (c) 2011, Carlos Tse <copperoxide@gmail.com>
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the <organization> nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
 package jwatermark;
 
 import static jwatermark.Constant.*;
@@ -50,7 +77,7 @@ public class ImageWatermarkGui {
 	}
 
 	private void initInterface(){
-		int i  = 0;
+		int i = 0;
 		shell.setSize(SHELL_SIZE);
 		shell.setMinimumSize(SHELL_SIZE);
 		shell.setText(TXT[i++] + " " + TXT[i++]);
@@ -111,32 +138,33 @@ public class ImageWatermarkGui {
 	}
 
 	private Menu getMenuBar(){
+		int i = 20;
 		final Menu 	menuBar = new Menu(shell, SWT.BAR),
 					fileMenu = new Menu(shell, SWT.DROP_DOWN),
 					helpMenu = new Menu(shell, SWT.DROP_DOWN);
 
 		final MenuItem file = new MenuItem(menuBar, SWT.CASCADE);
-	    file.setText("&File");
+	    file.setText(TXT[i++]);
 	    file.setMenu(fileMenu);
 
 	    final MenuItem openSrcItem = new MenuItem(fileMenu, SWT.PUSH);
-	    openSrcItem.setText("&Open Source\tCTRL+O");
+	    openSrcItem.setText(TXT[i++]);
 	    openSrcItem.setAccelerator(SWT.CTRL + 'O');
 
 	    final MenuItem openWatermarkItem = new MenuItem(fileMenu, SWT.PUSH);
-	    openWatermarkItem.setText("&Open Watermark\tCTRL+W");
+	    openWatermarkItem.setText(TXT[i++]);
 	    openWatermarkItem.setAccelerator(SWT.CTRL + 'W');
 
 	    new MenuItem(fileMenu, SWT.SEPARATOR);
 
 	    final MenuItem saveItem = new MenuItem(fileMenu, SWT.PUSH);
-	    saveItem.setText("&Save\tCTRL+S");
+	    saveItem.setText(TXT[i++]);
 	    saveItem.setAccelerator(SWT.CTRL + 'S');
 
 	    new MenuItem(fileMenu, SWT.SEPARATOR);
 
 	    final MenuItem exitItem = new MenuItem(fileMenu, SWT.PUSH);
-	    exitItem.setText("E&xit\tCTRL+Q");
+	    exitItem.setText(TXT[i++]);
 	    exitItem.setAccelerator(SWT.CTRL + 'Q');
 
 	    openSrcItem.addSelectionListener(new Open(TYPE_SRC));
@@ -145,11 +173,11 @@ public class ImageWatermarkGui {
 	    exitItem.addSelectionListener(new Exit());
 
 	    final MenuItem help = new MenuItem(menuBar, SWT.CASCADE);
-	    help.setText("&Help");
+	    help.setText(TXT[i++]);
 	    help.setMenu(helpMenu);
 
 	    final MenuItem aboutItem = new MenuItem(helpMenu, SWT.PUSH);
-	    aboutItem.setText("&About");
+	    aboutItem.setText(TXT[i++]);
 	    aboutItem.addSelectionListener(new About());
 
 	    return menuBar;
