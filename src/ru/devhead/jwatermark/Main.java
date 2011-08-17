@@ -14,7 +14,6 @@ public class Main {
 	      } catch (Exception ex) {
 	          ex.printStackTrace();
 	      }
-				
 			SwingUtilities.invokeLater(new Runnable() {
 	            public void run() {
 	            	new ImageWatermarkGuiSwing().setVisible(true);
